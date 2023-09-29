@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/output.css">
 </head>
-<body>
-  <div class="bg-blue-500 text-white p-4">
-        This is a blue box with white text.
+
+  <div class="navbar-container">
+
+    <?php include 'navbar.html'; ?>
+    <?php include 'feature.html'; ?>
   </div>
 </body>
 </html>
