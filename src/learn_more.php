@@ -7,10 +7,8 @@
 </head>
 
   <div class="navbar-container">
-
     <?php include 'navbar.html'; ?>
-    <?php include 'hero.html'; ?>
-    <?php include 'feature.html'; ?>
   </div>
 </body>
 </html>
+
