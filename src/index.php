@@ -11,6 +11,7 @@
     <?php include 'navbar.html'; ?>
     <?php include 'hero.html'; ?>
     <?php include 'feature.html'; ?>
+    <?php include 'footer.html'; ?>
   </div>
 </body>
 </html>
