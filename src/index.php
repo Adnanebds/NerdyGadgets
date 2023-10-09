@@ -7,10 +7,14 @@
 </head>
 
   <div class="navbar-container">
-
     <?php include 'navbar.html'; ?>
     <?php include 'hero.html'; ?>
-    <?php include 'feature.html'; ?>
+    <br></br>
+    <br></br>
+    <?php include 'cards.html'; ?>
+    <br></br>
+    <br></br>
+    <?php include 'testomonials.html'; ?>
     <?php include 'footer.html'; ?>
   </div>
 </body>
