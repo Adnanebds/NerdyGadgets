@@ -9,30 +9,20 @@ include 'navbar.html';
         <!-- Image gallery -->
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="h-full w-full object-cover object-center">
+                <img src="4GPNDDRJp92J.jpg" alt="Two each of gray, white, and black shirts laying flat." class="h-full w-full object-cover object-center">
             </div>
-            <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-                <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
-                </div>
-                <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
-                </div>
-            </div>
-            <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
-            </div>
+
         </div>
 
         <!-- Product info -->
         <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
             <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Earthen bottle</h1>
+                <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Laptop</h1>
             </div>
 
             <div class="mt-4 lg:row-span-3 lg:mt-0">
                 <h2 class="sr-only">Product information</h2>
-                <p class="text-3xl tracking-tight text-gray-900">$48</p>
+                <p class="text-3xl tracking-tight text-gray-900">€700</p>
 
                 <!-- Reviews -->
                 <div class="mt-6">
