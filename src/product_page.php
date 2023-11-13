@@ -6,7 +6,7 @@ include 'navbar.html';
 ?>
 <div class="bg-white">
     <div class="pt-6">
-        <!-- Image gallery -->
+        <!-- Hier komen de foto's -->
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
                 <img src="4GPNDDRJp92J.jpg" alt="Two each of gray, white, and black shirts laying flat." class="h-full w-full object-cover object-center">
@@ -14,7 +14,7 @@ include 'navbar.html';
 
         </div>
 
-        <!-- Product info -->
+        <!-- Hier komt product info -->
         <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
             <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
                 <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Laptop</h1>

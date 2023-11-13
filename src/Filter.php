@@ -1,48 +1,48 @@
 <head>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const filterButton = document.getElementById("filter-button");
-    const filterDropdown = document.getElementById("filter-dropdown");
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterButton = document.getElementById("filter-button");
+        const filterDropdown = document.getElementById("filter-dropdown");
 
-    filterButton.addEventListener("click", function () {
-      filterDropdown.classList.toggle("hidden");
-    });
+        filterButton.addEventListener("click", function () {
+            filterDropdown.classList.toggle("hidden");
+        });
 
-    // Handle checkbox changes and filtering
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function (checkbox) {
-      checkbox.addEventListener("change", function () {
-        filterProducts();
-      });
-    });
+        // Handle checkbox changes and filtering
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                filterProducts();
+            });
+        });
 
-    function filterProducts() {
-      const products = document.querySelectorAll(".grid a");
-      const selectedPriceRanges = [];
+        function filterProducts() {
+            const products = document.querySelectorAll(".grid a");
+            const selectedPriceRanges = [];
 
-      checkboxes.forEach(function (checkbox) {
-        if (checkbox.checked) {
-          selectedPriceRanges.push(checkbox.id.replace("filter-price-", ""));
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    selectedPriceRanges.push(checkbox.id.replace("filter-price-", ""));
+                }
+            });
+
+            products.forEach(function (product) {
+                const priceElement = product.querySelector(".text-lg");
+                const price = parseFloat(priceElement.textContent.replace("€", ""));
+
+                if (selectedPriceRanges.length === 0 || selectedPriceRanges.includes(getPriceRange(price))) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
         }
-      });
-
-      products.forEach(function (product) {
-        const priceElement = product.querySelector(".text-lg");
-        const price = parseFloat(priceElement.textContent.replace("€", ""));
-
-        if (selectedPriceRanges.length === 0 || selectedPriceRanges.includes(getPriceRange(price))) {
-          product.style.display = "block";
-        } else {
-          product.style.display = "none";
-        }
-      });
-    }
 
     function getPriceRange(price) {
-      if (price <= 20) {
+      if (price <= 500) {
         return "1";
-      } else if (price <= 50) {
+      } else if (price <= 1000) {
         return "2";
       } else {
         return "3";
@@ -61,15 +61,15 @@
                         <div class="p-4 space-y-2">
                             <label class="flex items-center">
                                 <input type="checkbox" id="filter-price-1" class="form-checkbox">
-                                <span class="ml-2">Prijs 1 - €0 to €20</span>
+                                <span class="ml-2">Prijs 1 - €0 to €500</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" id="filter-price-2" class="form-checkbox">
-                                <span class="ml-2">Prijs 2 - €20 to €50</span>
+                                <span class="ml-2">Prijs 2 - €500 to €1000</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" id="filter-price-3" class="form-checkbox">
-                                <span class="ml-2">Prijs 3 - €50+</span>
+                                <span class="ml-2">Prijs 3 - €1000+</span>
                             </label>
                         </div>
                     </div>
