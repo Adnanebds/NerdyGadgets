@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles/product.css">
@@ -73,14 +72,17 @@
             <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 <?php
                 while ($row = mysqli_fetch_assoc($all_product)) {
-                    $productId = $row['id'];
-                    $image = $row['image'];
-                    $price = $row['price'];
+                     $productId = $row['id'];
+                      $image = $row['image'];
+                      $desc = $row['description'];
+                      $prijs = $row['price'];
+                      $name = $row['name'];
+                      $category = $row['category'];
                 ?>
-                    <a href="product_page.php?id=<?php echo $productId; ?>" class="group flex flex-col h-full">
-                        <div class="w-full h-48 overflow-hidden rounded-lg bg-gray-200 xl:h-56 xl:w-full">
-                            <?php echo "<img src='../pngs/product_images/$image.jpg' alt='productimage' class='h-full w-full object-cover object-center group-hover:opacity-75'>"; ?>
-                        </div>
+                   <a href="product_page.php?id=<?php echo $productId; ?>&image=<?php echo urlencode($image); ?>&desc=<?php echo urlencode($desc); ?>&prijs=<?php echo urlencode($prijs); ?>&name=<?php echo urlencode($name); ?>&category=<?php echo urlencode($category); ?>" class="group flex flex-col">
+                    <div class="w-full h-72 overflow-hidden rounded-lg bg-gray-200 xl:h-48 xl:w-64">
+                        <?php echo "<img src='../pngs/product_images/$image.jpg' alt='productimage' class='h-full w-full object-cover object-center group-hover:opacity-75'>"; ?>
+                    </div>
                         <div class="p-4 flex flex-col justify-between h-full">
                             <h3 class="text-xl font-bold mt-3 mb-1 text-gray-800" name="product_name"><?php echo $row['name']; ?></h3>
                             <p class="text-lg text-black mt-1 mb-2" name="product_price">€<?php echo $row['price']; ?></p>
@@ -109,6 +111,10 @@
     <br>
     <?php include 'footer.html'; ?>
 
+
 </body>
 
 </html>
+
+</div>
+</body>
