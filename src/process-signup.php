@@ -12,7 +12,7 @@ if (empty($_POST['name'])){
     die('Naam is verplicht');
 }
 
-if (filter_var( ! $_POST['email'], FILTER_VALIDATE_EMAIL)){
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     die('Geldige email is verplicht');
 }
 
@@ -32,7 +32,8 @@ if($_POST['password'] !== $_POST['password_confirmation']){
     die("Wachtwoorden moeten hetzelfde zijn");
 }
 
-$password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+// Hashing the password using SHA-256
+$password_hash = hash('sha256', $_POST['password']);
 
 $sql = "INSERT INTO user (first_name, email, password)
         VALUES(?,?,?)";
@@ -49,10 +50,9 @@ $stmt->bind_param('sss',
     $password_hash);
 
 if($stmt->execute()) {
-
     header("Location: signup-succes.html");
     exit;
-
 } else {
     die($conn->error . ' ' . $conn->error);
 }
+?>

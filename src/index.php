@@ -11,7 +11,7 @@
     <?php include 'hero.html'; ?>
     <br></br>
     <br></br>
-    <?php include 'cards.html'; ?>
+    <?php include 'cards.php'; ?>
     <br></br>
     <br></br>
     <?php include 'testomonials.html'; ?>

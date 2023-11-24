@@ -30,6 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
         <h1 class="text-3xl font-semibold mb-8">Winkelmand</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
+            // Initialize total price
+            $total_price = 0;
+
             // Check if there are products in the cart
             if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 // Create a database connection
@@ -54,6 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
                         $product_name = $row['name'];
                         $product_price = $row['price'];
                         $product_image = $row['image'];
+
+                        // Add product price multiplied by quantity to total
+                        $total_price += $product_price * $quantity;
 
                         echo '<form method="post">';
                         echo '<div class="bg-white p-4 shadow-lg rounded-lg">';
@@ -80,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
             ?>
         </div>
         <div class="mt-8 text-right">
-            <!-- You can calculate the total price here based on the products in the cart -->
-            <p class="text-xl font-semibold">Totaal: €59.97</p>
+            <!-- Display the calculated total price dynamically -->
+            <p class="text-xl font-semibold">Totaal: €<?php echo number_format($total_price, 2); ?></p>
             <button class="mt-4 bg-green-500 text-white font-semibold px-6 py-3 rounded hover-bg-green-700">Afrekenen</button>
         </div>
     </div>

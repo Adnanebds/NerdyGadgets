@@ -32,7 +32,7 @@
         $_SESSION['cart'][$product_id] = isset($_SESSION['cart'][$product_id]) ? $_SESSION['cart'][$product_id] + 1 : 1;
 
         // Set success message
-        $_SESSION['success_message'] = "Product successfully added to the cart!";
+        $_SESSION['success_message'] = "Product succesvol toegevoegd aan het winkelmand!";
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit();
     }
