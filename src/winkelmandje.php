@@ -2,7 +2,7 @@
 // Start the session before any output is sent
 session_start();
 
-include 'navbar.html';
+include 'navbar.php';
 
 // Function to remove a product from the cart
 function removeFromCart($product_id)

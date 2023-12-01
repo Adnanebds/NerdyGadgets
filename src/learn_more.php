@@ -7,7 +7,7 @@
 </head>
 
   <div class="navbar-container">
-    <?php include 'navbar.html'; ?>
+    <?php include 'navbar.php'; ?>
   </div>
 </body>
 </html>

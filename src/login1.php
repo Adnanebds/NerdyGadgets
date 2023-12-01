@@ -26,6 +26,8 @@
             if ($hashed_password_entered === $hashed_password_from_db) {
                 header("Location: index.php");
                 $_SESSION['id'] = $user['id']; // Set the user ID in the session
+                $_SESSION['loggedin'] = true;
+                $_SESSION['user']['first_name'] = $user['first_name']; // Store first name in session
                 exit(); // Make sure to exit after redirect
             } else {
                 $is_invalid = true;

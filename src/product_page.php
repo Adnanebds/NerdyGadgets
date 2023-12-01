@@ -9,7 +9,7 @@
 
 <?php
 session_start(); // Start the session
-include 'navbar.html';
+include 'navbar.php';
 
 $servername = "localhost";
 $username = "root";

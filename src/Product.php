@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?php include 'navbar.html'; ?>
+<?php include 'navbar.php'; ?>
 <?php
 $servername = "localhost";
 $username = "root";
