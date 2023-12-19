@@ -8,7 +8,6 @@
 </head>
 
 <?php
-session_start(); // Start the session
 include 'navbar.php';
 
 $servername = "localhost";

@@ -65,7 +65,7 @@
                     </a>
                     <!-- Additional code for ratings and other details here -->
                     <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$<?php echo $row['price']; ?></span>
+                        <span class="text-3xl font-bold text-gray-900 dark:text-white">€<?php echo $row['price']; ?></span>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,6 @@ $sql_afloped = "SELECT * FROM product ORDER BY price DESC;";
 
 $all_product = $conn->query($sql);
 
-session_start();
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 }

@@ -1,10 +1,6 @@
 <?php
-// Start the session before any output is sent
-session_start();
-
 include 'navbar.php';
 
-// Function to remove a product from the cart
 function removeFromCart($product_id)
 {
     if (isset($_SESSION['cart'][$product_id])) {
@@ -12,7 +8,6 @@ function removeFromCart($product_id)
     }
 }
 
-// Handle removal when form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) {
     $remove_product_id = $_POST['product_id'];
     removeFromCart($remove_product_id);
@@ -22,7 +17,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
 <html lang="en">
 
 <head>
-    <!-- ... (your HTML head section) ... -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function applyDiscount() {
+            var enteredCode = document.getElementById('discountCodeInput').value;
+            var storedCode = sessionStorage.getItem('discountCode');
+
+            if (enteredCode === storedCode) {
+                var currentTotal = parseFloat($('#totalPrice').text().replace(/[^\d.-]/g, ''));
+                var discountedTotal = currentTotal * 0.9;
+
+                $('#totalPrice').text('€' + discountedTotal.toFixed(2));
+                $('#discountedTotalInput').val(discountedTotal);
+
+                alert("Discount applied! 10% off your total price.");
+            } else {
+                alert("Invalid discount code. Please try again.");
+            }
+
+            return false; // Prevent form submission and page reload
+        }
+    </script>
 </head>
 
 <body class="bg-gray-100">
@@ -30,12 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
         <h1 class="text-3xl font-semibold mb-8">Winkelmand</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
-            // Initialize total price
             $total_price = 0;
 
-            // Check if there are products in the cart
             if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-                // Create a database connection
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
@@ -46,9 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                // Loop through the cart items and display product details
                 foreach ($_SESSION['cart'] as $product_id => $quantity) {
-                    // Retrieve product details from the database
                     $sql = "SELECT * FROM product WHERE id = $product_id";
                     $result = $conn->query($sql);
 
@@ -58,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
                         $product_price = $row['price'];
                         $product_image = $row['image'];
 
-                        // Add product price multiplied by quantity to total
                         $total_price += $product_price * $quantity;
 
                         echo '<form method="post">';
@@ -73,21 +82,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
                         echo '<input type="hidden" name="product_id" value="' . $product_id . '">';
                         echo '<button type="submit" name="remove_from_cart" class="mt-4 bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700">Verwijder</button>';
                         echo '</div>';
+                        echo '<input type="text" id="discountCodeInput" placeholder="Enter discount code">';
+                        echo '<button onclick="return applyDiscount()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Apply Discount
+                        </button>';
                         echo '</form>';
                     }
                 }
 
-                // Close the database connection
                 $conn->close();
             } else {
-                // Display a message if the cart is empty
                 echo '<p>Je winkelmandje is leeg.</p>';
             }
             ?>
         </div>
         <div class="mt-8 text-right">
-            <!-- Display the calculated total price dynamically -->
-            <p class="text-xl font-semibold">Totaal: €<?php echo number_format($total_price, 2); ?></p>
+            <p id="totalPrice" class="text-xl font-semibold">Totaal: €<?php echo number_format($total_price, 2); ?></p>
+            <input type="hidden" id="discountedTotalInput" name="discountedTotal" value="<?php echo $total_price; ?>">
             <button class="mt-4 bg-green-500 text-white font-semibold px-6 py-3 rounded hover-bg-green-700">Afrekenen</button>
         </div>
     </div>
