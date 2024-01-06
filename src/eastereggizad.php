@@ -19,7 +19,7 @@
         if (secretCode.join('') === konamiCode.join('')) {
             const videoFrame = document.getElementById('videoFrame');
             videoFrame.style.display = 'block';
-            videoFrame.src = 'https://www.youtube.com/embed/IOwLVfO_xZM?autoplay=1'; // Vervang YOUR_VIDEO_ID door de daadwerkelijke YouTube-video-ID
+            videoFrame.src = 'https://www.youtube.com/embed/oPj8U65R24g'; // Vervang YOUR_VIDEO_ID door de daadwerkelijke YouTube-video-ID
         }
     });
 </script>
