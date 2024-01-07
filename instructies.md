@@ -28,7 +28,7 @@ Open het project in je browser: http://localhost/projectnaam/.
 
 Opmerking
 In de xamp/mysql/data map staat ook nog alle gegevens die je nodig hebt, inplaats van stap 3. 
-
+de .git map is hidden. Als je boven in de file explorer in de project map klikt op View - > Show - > Hidden items dan zou je de .git map moeten kunne zien.
 
 
 
