@@ -17,9 +17,10 @@
                             </h1>
                         </div>
                         <p class="px-4 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit
-                            amet.
+                            
+Welkom bij NerdyGadgets, dé plek waar technologie en innovatie samenkomen! Bij ons vind je een uitgebreid assortiment aan nerdy gadgets, waaronder de nieuwste laptops die aansluiten bij de behoeften van techliefhebbers zoals jij.
+
+Of je nu op zoek bent naar krachtige prestaties, slanke ontwerpen of de nieuwste technologische snufjes, NerdyGadgets heeft het allemaal. Ontdek een wereld van mogelijkheden met onze laptops die zijn ontworpen om jouw nerdy avontuur naar een hoger niveau te tillen..
                         </p>
                         <div class="flex flex-wrap items-center">
                             <div class="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
@@ -35,7 +36,7 @@
                                     </span>
                                     <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">2097
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Projecten en Plannen/h2>
+                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Projecten en Plannen </h2>
                                 </div>
                             </div>
                             <div class="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
