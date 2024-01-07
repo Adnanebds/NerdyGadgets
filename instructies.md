@@ -26,6 +26,9 @@ Werk de databaseverbindinginstellingen bij met jouw lokale MySQL-inloggegevens.
 Verplaats de projectmap naar de htdocs-map van je XAMPP-installatie.
 Open het project in je browser: http://localhost/projectnaam/.
 
+6. Vergeet niet npm install nog te doen, zodat je alle node modules hebt geinstalleerd. 
+In dit project wordt namelijk tailwind gebruikt. 
+
 Opmerking
 In de xamp/mysql/data map staat ook nog alle gegevens die je nodig hebt, inplaats van stap 3. 
 de .git map is hidden. Als je boven in de file explorer in de project map klikt op View - > Show - > Hidden items dan zou je de .git map moeten kunne zien.
