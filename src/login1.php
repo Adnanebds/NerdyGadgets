@@ -62,6 +62,7 @@
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Log in uw account
+
                     </h1>
                     <?php if ($is_invalid): ?>
                         <em class="text-red-500">Invalid login</em>
